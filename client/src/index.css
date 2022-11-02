@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;500;800&display=swap');
+
+*{
+    font-family: 'Dosis', sans-serif;
+}
+
+h1{
+    text-align: center;
+}
+
+.input-display{
+    grid-template-columns: 50vw;
+}
+
+.input-form{
+    display: grid;
+    grid-template-columns: 30vw;
+    gap: 0.5em;
+}
+
+input{
+    padding: 0.2em;
+    border: 2px black solid;
+    border-radius: 5px;
+}
+
+button{
+    cursor: pointer;
+    background: none;
+    border: 2px black solid;
+    border-radius: 5px;
+}
+
+button:hover{
+    background-color: grey;
+}
