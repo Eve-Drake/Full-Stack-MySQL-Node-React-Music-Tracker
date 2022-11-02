@@ -2,11 +2,22 @@ import sqlite3 from 'sqlite3'
 import express from 'express';
 const app = express();
 
-const db = new sqlite3.Database(':memory:', (err) =>{
+const db = new sqlite3.Database('./music-data.db', (err) =>{
     if(err) {
         return console.log(err.message)
     }
     console.log('Database Connected')
+})
+
+let sql = `SELECT * FROM music`
+
+db.all(sql, [],(err,rows) =>{
+    if(err) {
+        throw err
+    }
+    rows.forEach((row) =>{
+        console.log(row.name)
+    })
 })
 
 db.close((err)=>{
