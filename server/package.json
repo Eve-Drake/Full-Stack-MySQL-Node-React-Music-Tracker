@@ -2,6 +2,7 @@
   "name": "music-app-server",
   "version": "1.0.0",
   "description": "Node Express MySQL Server Side",
+  "type": "module",
   "main": "index.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
