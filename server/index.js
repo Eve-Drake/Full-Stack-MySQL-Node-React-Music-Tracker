@@ -2,7 +2,7 @@ import sqlite3 from 'sqlite3'
 import express from 'express';
 const app = express();
 
-const db = new sqlite3.Database('./music-data.db', (err) =>{
+const db = new sqlite3.Database('./music-data.db', sqlite3.OPEN_READWRITE, (err) =>{
     if(err) {
         return console.log(err.message)
     }
@@ -28,7 +28,7 @@ db.close((err)=>{
 })
 
 
-app.get('/', (req,res) => {
+app.get('/', (req, res) => {
     res.send('Incorrect Route')
 })
 
