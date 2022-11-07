@@ -9,15 +9,11 @@ const db = new sqlite3.Database('./music-data.db', sqlite3.OPEN_READWRITE, (err)
     console.log('Database Connected')
 })
 
-let sql = `SELECT * FROM music`
-
-db.all(sql, [],(err,rows) =>{
-    if(err) {
-        throw err
+sql = `INSERT INTO music(title, artist, album) VALUES (?, ?, ?)`
+db.run(sql, ['Database Added Title', 'Database Added Artist', 'Database Addded Album'], (err) => {
+    if (err){
+        return console.log(err.message)
     }
-    rows.forEach((row) =>{
-        console.log(row.name)
-    })
 })
 
 db.close((err)=>{
