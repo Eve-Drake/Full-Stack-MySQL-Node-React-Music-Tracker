@@ -14,7 +14,7 @@ const db = new sqlite3.Database('./music-data.db', sqlite3.OPEN_READWRITE, (err)
 
 //db.run('DROP TABLE music')
 
-db.run('INSERT INTO music(title, artist, album) VALUES(?, ?, ?,)', ['Node Added Title', 'Node Added Artist', 'Node Added Album'], (err) =>{
+db.run('INSERT INTO music(title, artist, album) VALUES(?, ?, ?)', ['Node Added Title', 'Node Added Artist', 'Node Added Album'], (err) =>{
     if(err){
         return console.log(err.message);
     }
