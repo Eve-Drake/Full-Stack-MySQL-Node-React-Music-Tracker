@@ -21,6 +21,8 @@ const db = new sqlite3.Database('./music-data.db', sqlite3.OPEN_READWRITE, (err)
 //     console.log('Row Added: ${this.lastID}');
 // })
 
+
+
 db.close((err)=>{
     if(err){
         console.log(err.message)
